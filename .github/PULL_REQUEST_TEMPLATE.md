@@ -1,33 +1,33 @@
-## 📌 Tipo de mudança
-<!-- Marque com um "x" o tipo de mudança -->
-- [ ] 🚀 Nova funcionalidade (feat)
-- [ ] 🐛 Correção de bug (fix)
-- [ ] 🔨 Refatoração de código (refact)
-- [ ] 📄 Atualização de documentação (docs)
-- [ ] 🧪 Testes adicionados/alterados (test)
+## 📌 Type of Change
+<!-- Mark with an "x" the type of change -->
+- [ ] 🚀 New Feature (feat)
+- [ ] 🐛 Bug Fix (fix)
+- [ ] 🔨 Code Refactoring (refact)
+- [ ] 📄 Documentation Update (docs)
+- [ ] 🧪 Tests Added/Updated (test)
 
 ---
 
-## 📋 Descrição
-<!-- Descreva as mudanças feitas no PR de forma objetiva -->
-> Exemplo: Adiciona a funcionalidade X para permitir Y.
+## 📋 Description
+<!-- Describe the changes in this PR clearly and concisely -->
+> Example: Adds feature X to enable Y.
 
 ---
 
-## 📝 Checklist antes de pedir review
-<!-- Marque com um "x" os itens concluídos -->
-- [ ] Código está de acordo com o padrão do projeto
-- [ ] Testes foram adicionados/atualizados
-- [ ] Documentação foi atualizada (se necessário)
-- [ ] Nenhum erro no lint/styleguide
+## ✅ Pre-Merge Checklist
+<!-- Mark with an "x" the completed items -->
+- [ ] Code follows the project style guidelines
+- [ ] Tests have been added/updated
+- [ ] Documentation has been updated (if needed)
+- [ ] No lint/style errors
 
 ---
 
-## 🔗 Issue relacionada
-<!-- Se esse PR resolver uma issue, linke aqui -->
-Closes #123 (ou "Relacionado à issue #123")
+## 🔗 Related Issue
+<!-- If this PR solves an issue, link it here -->
+Closes #123 (or "Relates to issue #123")
 
 ---
 
-## 📷 Capturas de Tela (se aplicável)
-<!-- Adicione prints ou GIFs para ilustrar mudanças visuais -->
+## 📷 Screenshots (if applicable)
+<!-- Add screenshots or GIFs to illustrate UI changes -->
