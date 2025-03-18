@@ -21,7 +21,7 @@
 }
 
 .log{
-    border: 1px dotted #666;
+    border: 1px dotted #999;
     height: 200px;
     overflow-y: scroll;
 }
