@@ -116,11 +116,7 @@ class Log {
         this.render();
     }
 
-    render(){
-        this.listEl.innerHTML = '';
-
-        for(let i in this.list){
-            this.listEl.innerHTML += `<li>${this.list[i]}</li>`
-        }
+    render() {
+        this.listEl.innerHTML = this.list.map(msg => `<li>${msg}</li>`).join('');
     }
 }
