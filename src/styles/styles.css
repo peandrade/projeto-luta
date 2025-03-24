@@ -1,9 +1,9 @@
-.figthArea{
+.fightArea{
     display: flex;
     gap: 20px;
 
     & #player,
-    #monster{
+    #enemy{
         flex: 1;
     }
 
