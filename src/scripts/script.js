@@ -3,31 +3,35 @@ const enemy = new LittleEnemy();
 const battleLog = createBattleLog(document.querySelector('.log'));
 
 const stage = new Stage(
-    player,
-    enemy,
-    document.querySelector('#player'),
-    document.querySelector('#enemy'),
-    battleLog
-)
+  player,
+  enemy,
+  document.querySelector('#player'),
+  document.querySelector('#enemy'),
+  battleLog,
+);
 
 function setupControls(stage, player, enemy) {
-    document.querySelector('#player .attackButton').addEventListener('click', () => stage.doAttack(player, enemy));
-    document.querySelector('#enemy .attackButton').addEventListener('click', () => stage.doAttack(enemy, player));
+  document
+    .querySelector('#player .attackButton')
+    .addEventListener('click', () => stage.doAttack(player, enemy));
+  document
+    .querySelector('#enemy .attackButton')
+    .addEventListener('click', () => stage.doAttack(enemy, player));
 }
 
 function createBattleLog(listElement) {
-    const list = [];
+  const list = [];
 
-    function addMessage(msg) {
-        list.push(msg);
-        render();
-    }
+  function addMessage(msg) {
+    list.push(msg);
+    render();
+  }
 
-    function render() {
-        listElement.innerHTML = list.map(msg => `<li>${msg}</li>`).join('');
-    }
+  function render() {
+    listElement.innerHTML = list.map((msg) => `<li>${msg}</li>`).join('');
+  }
 
-    return {addMessage};
+  return { addMessage };
 }
 
 setupControls(stage, player, enemy);

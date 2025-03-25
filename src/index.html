@@ -1,37 +1,35 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="./styles/styles.css">
-</head>
+    <link rel="stylesheet" href="./styles/styles.css" />
+  </head>
 
-<body>
-    <div class="fightArea">
-        <div id="player">
-            <div class="lifebar">
-                <div class="bar" style="width: 10%;"></div>
-            </div>
-            <strong class="name">--</strong>
-            <div>
-                <button class="attackButton">Atacar</button>
-            </div>
+  <body>
+    <div class="fight-area">
+      <div id="player">
+        <div class="lifebar">
+          <div class="bar" style="width: 10%"></div>
         </div>
-        <div id="enemy">
-            <div class="lifebar">
-                <div class="bar" style="width: 10%;"></div>
-            </div>
-            <strong class="name">--</strong>
-            <div>
-                <button class="attackButton">Atacar</button>
-            </div>
+        <strong class="name">--</strong>
+        <div>
+          <button class="attackButton">Atacar</button>
         </div>
+      </div>
+      <div id="enemy">
+        <div class="lifebar">
+          <div class="bar" style="width: 10%"></div>
+        </div>
+        <strong class="name">--</strong>
+        <div>
+          <button class="attackButton">Atacar</button>
+        </div>
+      </div>
     </div>
     <ul class="log"></ul>
     <script src="./scripts/classes.js"></script>
     <script src="./scripts/script.js"></script>
-</body>
-
+  </body>
 </html>
