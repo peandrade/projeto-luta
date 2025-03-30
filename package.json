@@ -1,0 +1,25 @@
+{
+  "name": "projeto-luta",
+  "version": "2.1.0",
+  "type": "module",
+  "description": "Welcome to my very first project built with **HTML**, **CSS**, and **JavaScript**! 🚀  \r This project marks the beginning of my journey as a developer — simple now, but full of potential!",
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint .",
+    "prettier:check": "prettier --check .",
+    "prettier:fix": "prettier --write .",
+    "stylelint": "stylelint \"src/**/*.css\"",
+    "stylelint:fix": "stylelint \"src/**/*.css\" --fix",
+    "build": "echo 'Nenhum build necessário para HTML/CSS/JS puro' && exit 0",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^9.23.0",
+    "prettier": "^3.5.3",
+    "stylelint": "^16.16.0",
+    "stylelint-config-standard": "^37.0.0"
+  }
+}
