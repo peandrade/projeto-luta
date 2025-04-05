@@ -1,3 +1,5 @@
+import { Knight, LittleEnemy, Stage } from './index.js';
+
 const player = new Knight('Pedro');
 const enemy = new LittleEnemy();
 const battleLog = createBattleLog(document.querySelector('.log'));
@@ -29,6 +31,7 @@ function createBattleLog(listElement) {
 
   function render() {
     listElement.innerHTML = list.map((msg) => `<li>${msg}</li>`).join('');
+    listElement.scrollTop = listElement.scrollHeight;
   }
 
   return { addMessage };

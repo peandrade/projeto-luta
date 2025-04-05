@@ -7,29 +7,37 @@ on:
       - main
 
 jobs:
-  lint-build:
+  lint-and-build:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
+      - name: 🧾 Checkout do código
         uses: actions/checkout@v4
 
-      - name: Set up Node.js
+      - name: 🔧 Set up Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 18
 
-      - name: Install dependencies
+      - name: 📦 Cache dependências do npm
+        uses: actions/cache@v4
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
+      - name: 📥 Instalar dependências
         run: npm ci
 
-      - name: Run ESLint (JavaScript)
+      - name: 🧪 ESLint - Análise de JavaScript
         run: npm run lint
 
-      - name: Run Prettier
-        run: npm run prettier:check
+      - name: 💅 Prettier - Verificação de formatação
+        run: npm run format
 
-      - name: Run Stylelint (CSS)
+      - name: 🎨 Stylelint - Validação de CSS
         run: npm run stylelint
 
-      - name: Dummy Build step
-        run: npm run build
+      - name: 🛠️ Tailwind Build (produção)
+        run: npx tailwindcss -i ./src/styles/input.css -o ./src/styles/style.css --minify
