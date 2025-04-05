@@ -120,16 +120,9 @@ html {
   line-height: 1.5;
   text-size-adjust: 100%;
   tab-size: 4;
-  tab-size: 4;
-  tab-size: 4;
   font-family:
-    ui-sans-serif,
-    system-ui,
-    sans-serif,
-    "Apple Color Emoji",
-    "Segoe UI Emoji",
-    "Segoe UI Symbol",
-    "Noto Color Emoji";
+    ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+    'Segoe UI Symbol', 'Noto Color Emoji';
   font-feature-settings: normal;
   font-variation-settings: normal;
   -webkit-tap-highlight-color: transparent;
@@ -147,7 +140,6 @@ hr {
 }
 
 abbr:where([title]) {
-  text-decoration: underline dotted;
   text-decoration: underline dotted;
 }
 
@@ -176,14 +168,8 @@ kbd,
 pre,
 samp {
   font-family:
-    ui-monospace,
-    SFMono-Regular,
-    Menlo,
-    Monaco,
-    Consolas,
-    "Liberation Mono",
-    "Courier New",
-    monospace;
+    ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono',
+    'Courier New', monospace;
   font-feature-settings: normal;
   font-variation-settings: normal;
   font-size: 1em;
@@ -241,7 +227,7 @@ button,
 input:where([type='button']),
 input:where([type='reset']),
 input:where([type='submit']) {
-  appearance: button;
+  appearance: auto;
   background-color: transparent;
   background-image: none;
 }
@@ -273,7 +259,7 @@ progress {
 }
 
 ::-webkit-file-upload-button {
-  appearance: button;
+  appearance: auto;
   font: inherit;
 }
 
@@ -320,12 +306,6 @@ dialog {
 
 textarea {
   resize: vertical;
-}
-
-input::placeholder,
-textarea::placeholder {
-  opacity: 1;
-  color: #9ca3af;
 }
 
 input::placeholder,
