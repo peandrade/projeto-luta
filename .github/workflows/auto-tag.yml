@@ -1,0 +1,27 @@
+name: Criar tag a partir do package.json
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  create-tag:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Extrair versão
+        id: package-version
+        run: |
+          VERSION=$(node -p "require('./package.json').version")
+          echo "PACKAGE_VERSION=v$VERSION" >> $GITHUB_OUTPUT
+
+      - name: Criar tag
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git tag ${{ steps.package-version.outputs.PACKAGE_VERSION }}
+          git push origin ${{ steps.package-version.outputs.PACKAGE_VERSION }}

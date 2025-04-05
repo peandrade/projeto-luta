@@ -1,11 +1,12 @@
 class Character {
-  _life = 1;
-  maxLife = 1;
-  attack = 0;
-  defense = 0;
+  #life = 1;
 
-  constructor(name) {
+  constructor(name, maxLife = 1, attack = 0, defense = 0) {
     this.name = name;
+    this.maxLife = maxLife;
+    this.attack = attack;
+    this.defense = defense;
+    this.life = maxLife;
   }
 
   get life() {
@@ -13,51 +14,39 @@ class Character {
   }
 
   set life(newLife) {
-    this._life = newLife < 0 ? 0 : newLife;
+    this._life = Math.min(this.maxLife, newLife < 0 ? 0 : newLife);
+  }
+
+  isAlive() {
+    return this.life > 0;
   }
 }
 
-class Knight extends Character {
+export class Knight extends Character {
   constructor(name) {
-    super(name);
-    this.life = 100;
-    this.attack = 10;
-    this.defense = 8;
-    this.maxLife = this.life;
+    super(name, 100, 10, 8);
   }
 }
 
-class Sorcerer extends Character {
+export class Sorcerer extends Character {
   constructor(name) {
-    super(name);
-    this.life = 80;
-    this.attack = 14;
-    this.defense = 3;
-    this.maxLife = this.life;
+    super(name, 80, 14, 3);
   }
 }
 
-class LittleEnemy extends Character {
+export class LittleEnemy extends Character {
   constructor() {
-    super('Little Enemy');
-    this.life = 40;
-    this.attack = 4;
-    this.defense = 4;
-    this.maxLife = this.life;
+    super('Little Enemy', 40, 4, 4);
   }
 }
 
-class BigMonster extends Character {
+export class BigEnemy extends Character {
   constructor() {
-    super('Big Monster');
-    this.life = 120;
-    this.attack = 16;
-    this.defense = 6;
-    this.maxLife = this.life;
+    super('Big Monster', 120, 16, 6);
   }
 }
 
-class Stage {
+export class Stage {
   static MAX_ATTACK_FACTOR = 2;
   static MAX_DEFENSE_FACTOR = 2;
 
@@ -74,10 +63,23 @@ class Stage {
   }
 
   renderCharacter(character, characterElement) {
-    characterElement.querySelector('.name').innerHTML =
-      `${character.name} - ${character.life.toFixed(1)} HP`;
+    const nameElement = characterElement.querySelector('.name');
+    const barElement = characterElement.querySelector('.bar');
+
     const lifePercent = (character.life / character.maxLife) * 100;
-    characterElement.querySelector('.bar').style.width = `${lifePercent}%`;
+    nameElement.innerHTML = `${character.name} - ${character.life.toFixed(1)} HP`;
+    barElement.style.width = `${lifePercent}%`;
+
+    if (lifePercent > 60) {
+      barElement.classList.remove('bg-yellow-400', 'bg-red-600');
+      barElement.classList.add('bg-green-500');
+    } else if (lifePercent > 30) {
+      barElement.classList.remove('bg-green-500', 'bg-red-600');
+      barElement.classList.add('bg-yellow-400');
+    } else {
+      barElement.classList.remove('bg-green-500', 'bg-yellow-400');
+      barElement.classList.add('bg-red-600');
+    }
   }
 
   update() {
@@ -85,25 +87,28 @@ class Stage {
     this.renderCharacter(this.enemy, this.enemyElement);
   }
 
-  doAttack(attacking, attacked) {
-    if (attacking.life <= 0 || attacked.life <= 0) {
-      this.battleLog.addMessage('Atacando cachorro morto.');
+  doAttack(attacker, defender) {
+    if (!attacker.isAlive() || !defender.isAlive()) {
+      this.battleLog.addMessage(
+        'Ataque inválido. Um dos personagens já foi derrotado.',
+      );
       return;
     }
 
-    const attackFactor = (Math.random() * Stage.MAX_ATTACK_FACTOR).toFixed(2);
-    const defenseFactor = (Math.random() * Stage.MAX_DEFENSE_FACTOR).toFixed(2);
-    const finalAttackPower = attacking.attack * attackFactor;
-    const finalDefensePower = attacking.defense * defenseFactor;
+    const attackFactor = Math.random() * Stage.MAX_ATTACK_FACTOR;
+    const defenseFactor = Math.random() * Stage.MAX_DEFENSE_FACTOR;
 
-    if (finalAttackPower > finalDefensePower) {
-      attacked.life -= finalAttackPower;
+    const attackPower = attacker.attack * attackFactor;
+    const defensePower = defender.defense * defenseFactor;
+
+    if (attackPower > defensePower) {
+      const damage = attackPower - defensePower;
+      defender.life -= damage;
       this.battleLog.addMessage(
-        `${attacking.name} causou ${finalAttackPower.toFixed(1)}`,
+        `${attacker.name} causou ${damage.toFixed(1)} de dano em ${defender.name}.`,
       );
     } else {
-      this.battleLog.addMessage(`${attacked.name} conseguiu defender`);
-      return;
+      this.battleLog.addMessage(`${defender.name} defendeu com sucesso!`);
     }
 
     this.update();
