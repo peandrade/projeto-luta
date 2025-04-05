@@ -1,6 +1,6 @@
 {
   "name": "projeto-luta",
-  "version": "2.2.1",
+  "version": "2.2.2",
   "type": "module",
   "description": "Welcome to my very first project built with **HTML**, **CSS**, and **JavaScript**! 🚀  \r This project marks the beginning of my journey as a developer — simple now, but full of potential!",
   "main": "index.js",
@@ -14,6 +14,7 @@
     "check": "npm run format && npm run lint:css && npm run lint",
     "fix": "npm run format:fix && npm run lint:fix && npm run lint:css:fix",
     "build:tailwind": "npx tailwindcss -i ./src/styles/input.css -o ./src/styles/style.css --watch",
+    "build:css": "npx tailwindcss -i ./src/styles/input.css -o ./public/style.css --minify",
     "prepare": "husky"
   },
   "lint-staged": {
