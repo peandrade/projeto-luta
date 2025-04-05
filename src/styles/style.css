@@ -25,7 +25,7 @@
   --tw-ring-inset:  ;
   --tw-ring-offset-width: 0px;
   --tw-ring-offset-color: #fff;
-  --tw-ring-color: rgb(59 130 246 / 0.5);
+  --tw-ring-color: rgb(59 130 246 / 50%);
   --tw-ring-offset-shadow: 0 0 #0000;
   --tw-ring-shadow: 0 0 #0000;
   --tw-shadow: 0 0 #0000;
@@ -52,6 +52,19 @@
   --tw-contain-layout:  ;
   --tw-contain-paint:  ;
   --tw-contain-style:  ;
+
+  box-sizing: border-box;
+
+  /* 1 */
+  border-width: 0;
+
+  /* 2 */
+  border-style: solid;
+
+  /* 2 */
+  border-color: #e5e7eb;
+
+  /* 2 */
 }
 
 ::backdrop {
@@ -79,7 +92,7 @@
   --tw-ring-inset:  ;
   --tw-ring-offset-width: 0px;
   --tw-ring-offset-color: #fff;
-  --tw-ring-color: rgb(59 130 246 / 0.5);
+  --tw-ring-color: rgb(59 130 246 / 50%);
   --tw-ring-offset-shadow: 0 0 #0000;
   --tw-ring-shadow: 0 0 #0000;
   --tw-shadow: 0 0 #0000;
@@ -117,19 +130,6 @@
 2. Allow adding a border to an element by just adding a border-width. (https://github.com/tailwindcss/tailwindcss/pull/116)
 */
 
-*,
-::before,
-::after {
-  box-sizing: border-box;
-  /* 1 */
-  border-width: 0;
-  /* 2 */
-  border-style: solid;
-  /* 2 */
-  border-color: #e5e7eb;
-  /* 2 */
-}
-
 ::before,
 ::after {
   --tw-content: '';
@@ -148,23 +148,29 @@
 html,
 :host {
   line-height: 1.5;
+
   /* 1 */
-  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+
   /* 2 */
-  -moz-tab-size: 4;
+
   /* 3 */
-  -o-tab-size: 4;
   tab-size: 4;
+
   /* 3 */
   font-family:
     ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
     'Segoe UI Symbol', 'Noto Color Emoji';
+
   /* 4 */
   font-feature-settings: normal;
+
   /* 5 */
   font-variation-settings: normal;
+
   /* 6 */
   -webkit-tap-highlight-color: transparent;
+
   /* 7 */
 }
 
@@ -175,8 +181,10 @@ html,
 
 body {
   margin: 0;
+
   /* 1 */
   line-height: inherit;
+
   /* 2 */
 }
 
@@ -188,10 +196,13 @@ body {
 
 hr {
   height: 0;
+
   /* 1 */
   color: inherit;
+
   /* 2 */
   border-top-width: 1px;
+
   /* 3 */
 }
 
@@ -200,7 +211,6 @@ Add the correct text decoration in Chrome, Edge, and Safari.
 */
 
 abbr:where([title]) {
-  -webkit-text-decoration: underline dotted;
   text-decoration: underline dotted;
 }
 
@@ -250,12 +260,16 @@ pre {
   font-family:
     ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono',
     'Courier New', monospace;
+
   /* 1 */
   font-feature-settings: normal;
+
   /* 2 */
   font-variation-settings: normal;
+
   /* 3 */
   font-size: 1em;
+
   /* 4 */
 }
 
@@ -295,10 +309,13 @@ sup {
 
 table {
   text-indent: 0;
+
   /* 1 */
   border-color: inherit;
+
   /* 2 */
   border-collapse: collapse;
+
   /* 3 */
 }
 
@@ -314,24 +331,34 @@ optgroup,
 select,
 textarea {
   font-family: inherit;
+
   /* 1 */
   font-feature-settings: inherit;
+
   /* 1 */
   font-variation-settings: inherit;
+
   /* 1 */
   font-size: 100%;
+
   /* 1 */
   font-weight: inherit;
+
   /* 1 */
   line-height: inherit;
+
   /* 1 */
   letter-spacing: inherit;
+
   /* 1 */
   color: inherit;
+
   /* 1 */
   margin: 0;
+
   /* 2 */
   padding: 0;
+
   /* 3 */
 }
 
@@ -353,11 +380,14 @@ button,
 input:where([type='button']),
 input:where([type='reset']),
 input:where([type='submit']) {
-  -webkit-appearance: button;
+  appearance: auto;
+
   /* 1 */
   background-color: transparent;
+
   /* 2 */
   background-image: none;
+
   /* 2 */
 }
 
@@ -400,9 +430,11 @@ Correct the cursor style of increment and decrement buttons in Safari.
 */
 
 [type='search'] {
-  -webkit-appearance: textfield;
+  appearance: textfield;
+
   /* 1 */
   outline-offset: -2px;
+
   /* 2 */
 }
 
@@ -411,7 +443,7 @@ Remove the inner padding in Chrome and Safari on macOS.
 */
 
 ::-webkit-search-decoration {
-  -webkit-appearance: none;
+  appearance: none;
 }
 
 /*
@@ -420,9 +452,11 @@ Remove the inner padding in Chrome and Safari on macOS.
 */
 
 ::-webkit-file-upload-button {
-  -webkit-appearance: button;
+  appearance: auto;
+
   /* 1 */
   font: inherit;
+
   /* 2 */
 }
 
@@ -492,19 +526,13 @@ textarea {
 2. Set the default placeholder color to the user's configured gray 400 color.
 */
 
-input::-moz-placeholder,
-textarea::-moz-placeholder {
-  opacity: 1;
-  /* 1 */
-  color: #9ca3af;
-  /* 2 */
-}
-
 input::placeholder,
 textarea::placeholder {
   opacity: 1;
+
   /* 1 */
   color: #9ca3af;
+
   /* 2 */
 }
 
@@ -540,8 +568,10 @@ iframe,
 embed,
 object {
   display: block;
+
   /* 1 */
   vertical-align: middle;
+
   /* 2 */
 }
 
@@ -656,66 +686,79 @@ video {
 
 .border-gray-700 {
   --tw-border-opacity: 1;
+
   border-color: rgb(55 65 81 / var(--tw-border-opacity, 1));
 }
 
 .border-black {
   --tw-border-opacity: 1;
+
   border-color: rgb(0 0 0 / var(--tw-border-opacity, 1));
 }
 
 .border-gray-500 {
   --tw-border-opacity: 1;
+
   border-color: rgb(107 114 128 / var(--tw-border-opacity, 1));
 }
 
 .bg-red-600 {
   --tw-bg-opacity: 1;
+
   background-color: rgb(220 38 38 / var(--tw-bg-opacity, 1));
 }
 
 .bg-blue-500 {
   --tw-bg-opacity: 1;
+
   background-color: rgb(59 130 246 / var(--tw-bg-opacity, 1));
 }
 
 .bg-gray-100 {
   --tw-bg-opacity: 1;
+
   background-color: rgb(243 244 246 / var(--tw-bg-opacity, 1));
 }
 
 .bg-red-500 {
   --tw-bg-opacity: 1;
+
   background-color: rgb(239 68 68 / var(--tw-bg-opacity, 1));
 }
 
 .bg-white {
   --tw-bg-opacity: 1;
+
   background-color: rgb(255 255 255 / var(--tw-bg-opacity, 1));
 }
 
 .bg-green-500 {
   --tw-bg-opacity: 1;
+
   background-color: rgb(34 197 94 / var(--tw-bg-opacity, 1));
 }
 
 .bg-yellow-400 {
   --tw-bg-opacity: 1;
+
   background-color: rgb(250 204 21 / var(--tw-bg-opacity, 1));
 }
 
 .bg-gray-400 {
   --tw-bg-opacity: 1;
+
   background-color: rgb(156 163 175 / var(--tw-bg-opacity, 1));
 }
 
 .bg-blue-900 {
   --tw-bg-opacity: 1;
+
   background-color: rgb(30 58 138 / var(--tw-bg-opacity, 1));
 }
 
 .bg-red-900 {
   --tw-bg-opacity: 1;
+
   background-color: rgb(127 29 29 / var(--tw-bg-opacity, 1));
 }
 
@@ -758,11 +801,13 @@ video {
 
 .text-black {
   --tw-text-opacity: 1;
+
   color: rgb(0 0 0 / var(--tw-text-opacity, 1));
 }
 
 .text-white {
   --tw-text-opacity: 1;
+
   color: rgb(255 255 255 / var(--tw-text-opacity, 1));
 }
 

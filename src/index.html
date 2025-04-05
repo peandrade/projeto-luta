@@ -9,16 +9,16 @@
 
   <body class="bg-white text-black">
     <main>
-      <div class="fight-area flex justify-between m-4">
+      <div class="fight-area m-4 flex justify-between">
         <div id="player" class="w-1/2 p-4">
-          <div class="lifebar h-3 border border-black rounded-md mb-2">
+          <div class="lifebar mb-2 h-3 rounded-md border border-black">
             <div
               class="bar h-full rounded-md transition-[width] duration-500"
             ></div>
           </div>
-          <strong class="name block mb-2">--</strong>
+          <strong class="name mb-2 block">--</strong>
           <button
-            class="attackButton px-4 py-1 bg-blue-900 text-white rounded"
+            class="attackButton rounded bg-blue-900 px-4 py-1 text-white"
             aria-label="Botão de ataque do jogador"
           >
             Atacar
@@ -26,14 +26,14 @@
         </div>
 
         <div id="enemy" class="w-1/2 p-4">
-          <div class="lifebar h-3 border border-black rounded-md mb-2">
+          <div class="lifebar mb-2 h-3 rounded-md border border-black">
             <div
               class="bar h-full rounded-md transition-[width] duration-500"
             ></div>
           </div>
-          <strong class="name block mb-2">--</strong>
+          <strong class="name mb-2 block">--</strong>
           <button
-            class="attackButton px-4 py-1 bg-red-900 text-white rounded"
+            class="attackButton rounded bg-red-900 px-4 py-1 text-white"
             aria-label="Botão de ataque do inimigo"
           >
             Atacar
@@ -42,7 +42,7 @@
       </div>
 
       <ul
-        class="log border-2 border-dotted border-gray-500 h-52 overflow-y-scroll text-center m-4 p-2 bg-gray-100 rounded"
+        class="log m-4 h-52 overflow-y-scroll rounded border-2 border-dotted border-gray-500 bg-gray-100 p-2 text-center"
       ></ul>
     </main>
 
