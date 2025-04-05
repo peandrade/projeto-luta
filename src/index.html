@@ -4,32 +4,48 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="./styles/styles.css" />
+    <link rel="stylesheet" href="./styles/style.css" />
   </head>
 
-  <body>
-    <div class="fight-area">
-      <div id="player">
-        <div class="lifebar">
-          <div class="bar" style="width: 10%"></div>
+  <body class="bg-white text-black">
+    <main>
+      <div class="fight-area flex justify-between m-4">
+        <div id="player" class="w-1/2 p-4">
+          <div class="lifebar h-3 border border-black rounded-md mb-2">
+            <div
+              class="bar h-full rounded-md transition-[width] duration-500"
+            ></div>
+          </div>
+          <strong class="name block mb-2">--</strong>
+          <button
+            class="attackButton px-4 py-1 bg-blue-900 text-white rounded"
+            aria-label="Botão de ataque do jogador"
+          >
+            Atacar
+          </button>
         </div>
-        <strong class="name">--</strong>
-        <div>
-          <button class="attackButton">Atacar</button>
+
+        <div id="enemy" class="w-1/2 p-4">
+          <div class="lifebar h-3 border border-black rounded-md mb-2">
+            <div
+              class="bar h-full rounded-md transition-[width] duration-500"
+            ></div>
+          </div>
+          <strong class="name block mb-2">--</strong>
+          <button
+            class="attackButton px-4 py-1 bg-red-900 text-white rounded"
+            aria-label="Botão de ataque do inimigo"
+          >
+            Atacar
+          </button>
         </div>
       </div>
-      <div id="enemy">
-        <div class="lifebar">
-          <div class="bar" style="width: 10%"></div>
-        </div>
-        <strong class="name">--</strong>
-        <div>
-          <button class="attackButton">Atacar</button>
-        </div>
-      </div>
-    </div>
-    <ul class="log"></ul>
-    <script src="./scripts/classes.js"></script>
-    <script src="./scripts/script.js"></script>
+
+      <ul
+        class="log border-2 border-dotted border-gray-500 h-52 overflow-y-scroll text-center m-4 p-2 bg-gray-100 rounded"
+      ></ul>
+    </main>
+
+    <script type="module" src="./scripts/script.js"></script>
   </body>
 </html>
