@@ -6,8 +6,8 @@
   "main": "index.js",
   "scripts": {
     "lint": "eslint .",
-    "lint:css": "stylelint 'src/**/*.css'",
-    "lint:fix": "eslint . --fix",
+    "stylelint": "stylelint \"src/**/*.css\"",
+    "stylelint:fix": "stylelint \"src/**/*.css\" --fix",
     "lint:css:fix": "stylelint 'src/**/*.css' --fix",
     "format": "prettier --check .",
     "format:fix": "prettier --write .",
