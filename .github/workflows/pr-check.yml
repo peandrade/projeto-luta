@@ -34,7 +34,7 @@ jobs:
         run: npm run lint
 
       - name: 💅 Prettier - Verificação de formatação
-        run: npm run prettier:check
+        run: npm run format
 
       - name: 🎨 Stylelint - Validação de CSS
         run: npm run stylelint
